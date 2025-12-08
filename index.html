@@ -16,7 +16,12 @@
                 <h1>INSTANT HOUSE</h1>
                 <p class="tagline">Est. 2025 &bull; Essex Jct</p>
             </div>
-            <ul class="nav-links">
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="products.html">Collections</a></li>
                 <li><a href="about.html">Our Story</a></li>
@@ -25,12 +30,42 @@
         </nav>
     </header>
 
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h2>Taste the Authentic</h2>
-                <p>Curating the finest Korean & Indian culinary essentials for the discerning home chef.</p>
-                <a href="products.html" class="cta-button">Explore Collections</a>
+        <section class="collections-hero">
+            <div class="collections-hero-content">
+                <p class="hero-subtitle">Curating Authentic Flavors</p>
+                <h2 class="hero-title">Taste the<br><span>Authentic</span></h2>
+                <p class="hero-description">Discover our handpicked selection of premium ramen and Asian delicacies, sourced directly from Korea and Japan.</p>
+                <a href="html/products.html" class="explore-btn">Explore Collections</a>
+            </div>
+            <div class="ramen-showcase">
+                <div class="ramen-item">
+                    <img src="images/New Project-2.png" alt="Premium Ramen 1">
+                </div>
+                <div class="ramen-item">
+                    <img src="images/New Project-3.png" alt="Premium Ramen 2">
+                </div>
+                <div class="ramen-item">
+                    <img src="images/New Project-4.png" alt="Premium Ramen 3">
+                </div>
             </div>
         </section>
 
@@ -42,46 +77,46 @@
                 
                 <div class="product-grid">
                     <!-- Item 1 -->
-                    <div class="product-card" style="border: 2px solid var(--accent-gold);">
+                    <div class="product-card">
                         <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1623341214825-9f4f963727da?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
-                            <span class="card-badge" style="background: var(--accent-gold); color: var(--primary-dark);">Korean Favorite</span>
+                            <span class="card-badge">Best Seller</span>
                         </div>
                         <div class="card-content">
-                            <h3 style="color: #d4af37;">Premium Shin Ramyun</h3>
+                            <h3>Shin Ramyun</h3>
                             <p class="card-price">$5.99</p>
                         </div>
                     </div>
 
                     <!-- Item 2 -->
                     <div class="product-card">
-                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
-                            <span class="card-badge">New Arrival</span>
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1569718212165-3a8278d5f624?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                            <span class="card-badge">Spicy</span>
                         </div>
                         <div class="card-content">
-                            <h3>Organic Basmati Rice</h3>
-                            <p class="card-price">$18.50</p>
+                            <h3>Buldak Fire Noodles</h3>
+                            <p class="card-price">$6.49</p>
                         </div>
                     </div>
 
                     <!-- Item 3 -->
-                    <div class="product-card" style="border: 2px solid var(--accent-gold);">
-                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1585325701956-60dd9c8553bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
-                            <span class="card-badge" style="background: var(--accent-gold); color: var(--primary-dark);">Authentic Korean</span>
+                    <div class="product-card">
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1612927601601-6638404737ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                            <span class="card-badge">Popular</span>
                         </div>
                         <div class="card-content">
-                            <h3 style="color: #d4af37;">Traditional Kimchi</h3>
-                            <p class="card-price">$12.95</p>
+                            <h3>Jin Ramen</h3>
+                            <p class="card-price">$4.99</p>
                         </div>
                     </div>
 
                     <!-- Item 4 -->
                     <div class="product-card">
-                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
-                            <span class="card-badge">Trending</span>
+                        <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1617093727343-374698b1b08d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                            <span class="card-badge">New</span>
                         </div>
                         <div class="card-content">
-                            <h3>Spicy Tikka Masala</h3>
-                            <p class="card-price">$8.99</p>
+                            <h3>Chapagetti Black Bean</h3>
+                            <p class="card-price">$5.49</p>
                         </div>
                     </div>
                 </div>
@@ -106,10 +141,15 @@
                 
                 <div class="map-container">
                     <div class="map-visual">
-                        <!-- Fake "Pin" visual -->
-                        <div class="map-pin">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2843.8892!2d-73.1108!3d44.4903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cca7a5537a7b6e1%3A0x9c0b0a0a0a0a0a0a!2s4%20Pearl%20St%2C%20Essex%20Junction%2C%20VT%2005452!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                     
                     <div class="location-details">
@@ -120,7 +160,7 @@
                             <i class="fas fa-location-arrow info-icon"></i>
                             <div>
                                 <strong>Address</strong>
-                                <p>123 Main Street<br>Essex Junction, VT 05452</p>
+                                <p>4 Pearl Street<br>Essex Junction, VT 05452</p>
                             </div>
                         </div>
                         
@@ -140,7 +180,7 @@
                             </div>
                         </div>
                         
-                        <a href="https://maps.google.com" target="_blank" class="cta-button" style="padding: 10px 25px; font-size: 0.9rem; margin-top: 10px;">Get Directions</a>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=4+Pearl+Street,+Essex+Junction,+VT+05452" target="_blank" class="cta-button" style="padding: 10px 25px; font-size: 0.9rem; margin-top: 10px;">Get Directions</a>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections | Instant House</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>INSTANT HOUSE</h1>
+                <p class="tagline">Est. 2025 &bull; Essex Jct</p>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Collections</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="contact.html">Visit Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+
+    <main>
+        <section class="collections-hero">
+            <div class="collections-hero-content">
+                <p class="hero-subtitle">Curating Authentic Flavors</p>
+                <h2 class="hero-title">Taste the<br><span>Authentic</span></h2>
+                <p class="hero-description">Discover our handpicked selection of premium ramen and Asian delicacies, sourced directly from Korea and Japan.</p>
+                <a href="#products" class="explore-btn">Explore Collections</a>
+            </div>
+            <div class="ramen-showcase">
+                <div class="ramen-item">
+                    <img src="../images/New Project-2.png" alt="Premium Ramen 1">
+                </div>
+                <div class="ramen-item">
+                    <img src="../images/New Project-3.png" alt="Premium Ramen 2">
+                </div>
+                <div class="ramen-item">
+                    <img src="../images/New Project-4.png" alt="Premium Ramen 3">
+                </div>
+            </div>
+        </section>
+
+        <section class="products" id="products">
+            <div class="container">
+                
+                <!-- Korean Category -->
+                <div class="product-category">
+                    <h3 class="section-title">Korean Essentials</h3>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1623341214825-9f4f963727da?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                            <div class="card-content">
+                                <h3>Ramen Collection</h3>
+                                <p class="card-price">From $4.99</p>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1585325701956-60dd9c8553bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                            <div class="card-content">
+                                <h3>Authentic Kimchi</h3>
+                                <p class="card-price">$12.95</p>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1582234372722-50d7ccc30ebd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                            <div class="card-content">
+                                <h3>Gochujang & Sauces</h3>
+                                <p class="card-price">$7.50</p>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                            <div class="card-content">
+                                <h3>Korean Snacks</h3>
+                                <p class="card-price">From $2.99</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <!-- Indian Category -->
+                <div class="product-category">
+                    <h3 class="section-title">Indian Pantry</h3>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                            <div class="card-content">
+                                <h3>Aromatic Spices</h3>
+                                <p class="card-price">From $3.99</p>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                            <div class="card-content">
+                                <h3>Basmati & Grains</h3>
+                                <p class="card-price">$18.50</p>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1606491956689-2ea28c67445c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                            <div class="card-content">
+                                <h3>Ready-to-Eat Curries</h3>
+                                <p class="card-price">$6.99</p>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1589923188900-85dae523342b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');"></div>
+                            <div class="card-content">
+                                <h3>Traditional Dals</h3>
+                                <p class="card-price">$5.50</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Instant House</h4>
+                    <p>Bringing the vibrant tastes of Korea and India to your neighborhood.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Our Collections</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <div style="font-size: 1.5rem; margin-top: 10px;">
+                        <a href="#" style="margin-right: 15px; color: white;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="margin-right: 15px; color: white;"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: white;"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Instant House Convenience. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
