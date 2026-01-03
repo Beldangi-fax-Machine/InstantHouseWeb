@@ -4,15 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Instant House</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/LOGO/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/LOGO/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/LOGO/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="../images/LOGO/favicon.ico">
+    <link rel="manifest" href="../images/LOGO/site.webmanifest">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <h1>INSTANT HOUSE</h1>
-                <p class="tagline">Est. 2025 &bull; Essex Jct</p>
+                <img src="../images/LOGO/1A3E63E8-7119-40B7-8B35-D3B9660D8D24.PNG" alt="Instant House Logo" class="logo-img">
+                <div class="logo-text">
+                    <h1>INSTANT HOUSE</h1>
+                    <p class="tagline">Est. 2025 &bull; Essex Jct</p>
+                </div>
             </div>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu">
                 <span class="bar"></span>
@@ -20,10 +29,9 @@
                 <span class="bar"></span>
             </button>
             <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Collections</a></li>
-                <li><a href="about.html">Our Story</a></li>
-                <li><a href="contact.html">Visit Us</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="https://www.google.com/maps/dir/?api=1&destination=4+Pearl+St+Suite+107,+Essex+Junction,+VT+05452" target="_blank">Visit Us</a></li>
             </ul>
         </nav>
     </header>
@@ -46,39 +54,17 @@
     </script>
 
     <main>
-        <section class="page-header" style="background: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.8)), url('https://images.unsplash.com/photo-1528712306091-edbb09e30263?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; padding: 120px 20px;">
-            <div class="container">
-                <h2 style="color: white; font-size: 3rem;">Our Story</h2>
-                <p style="color: #f4f4f4; font-size: 1.2rem; max-width: 600px; margin: 0 auto;">A fusion of cultures, a passion for quality.</p>
-            </div>
-        </section>
-
-        <section class="about-content">
-            <div class="container">
-                <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                    <h3 style="font-size: 2.5rem; margin-bottom: 30px;">Bridging Cultures Through Taste</h3>
-                    <p style="font-size: 1.1rem; margin-bottom: 20px;">Instant House is more than just a convenience store; it is a culinary destination in the heart of Essex Junction. Founded with a vision to bring the rich, authentic flavors of Korea and India to Vermont, we have curated a selection of products that tell a story of heritage and tradition.</p>
-                    
-                    <p style="font-size: 1.1rem; margin-bottom: 40px;">We believe that great food connects people. Whether you are an experienced chef looking for a specific spice or a curious foodie wanting to try authentic kimchi for the first time, our shelves are stocked with you in mind. We prioritize quality, authenticity, and freshness in every item we offer.</p>
-                </div>
-
-                <div class="feature-grid" style="margin-top: 60px;">
-                    <div class="feature-card">
-                        <i class="fas fa-star" style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 15px;"></i>
-                        <h3>Premium Quality</h3>
-                        <p>We source only the finest products from trusted suppliers to ensure authentic taste.</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-users" style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 15px;"></i>
-                        <h3>Community First</h3>
-                        <p>We are proud to serve the Essex Junction community and welcome everyone to our store.</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-globe-asia" style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 15px;"></i>
-                        <h3>Authentic Imports</h3>
-                        <p>Direct imports ensuring you get the real flavors of Korea and India.</p>
-                    </div>
-                </div>
+        <section class="about-content" style="padding: 80px 20px; background: linear-gradient(135deg, #FFF5F5 0%, #F4C2C2 30%, #E8B4B8 60%, #F5D0D0 100%); min-height: 70vh;">
+            <div class="container" style="text-align: center;">
+                <img src="../images/LOGO/1A3E63E8-7119-40B7-8B35-D3B9660D8D24.PNG" alt="Instant House Logo" style="height: 280px; margin-bottom: 30px;">
+                
+                <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: var(--primary-dark);">Our Story</h2>
+                
+                <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px; line-height: 1.8; color: #555;">
+                    Instant House brings authentic Korean and Indian flavors to Essex Junction. We source quality products to share the tastes of home with our Vermont community.
+                </p>
+                
+                <a href="https://www.google.com/maps/dir/?api=1&destination=4+Pearl+St+Suite+107,+Essex+Junction,+VT+05452" target="_blank" class="cta-button">Visit Us</a>
             </div>
         </section>
     </main>
@@ -88,23 +74,21 @@
             <div class="footer-content">
                 <div class="footer-col">
                     <h4>Instant House</h4>
-                    <p>Bringing the vibrant tastes of Korea and India to your neighborhood.</p>
+                    <p>Your neighborhood destination for authentic Korean and Indian groceries, snacks, and specialty items. Located in the heart of Essex Junction, Vermont.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="products.html">Our Collections</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="https://www.google.com/maps/dir/?api=1&destination=4+Pearl+St+Suite+107,+Essex+Junction,+VT+05452" target="_blank">Get Directions</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Connect</h4>
                     <div style="font-size: 1.5rem; margin-top: 10px;">
                         <a href="#" style="margin-right: 15px; color: white;"><i class="fab fa-instagram"></i></a>
-                        <a href="#" style="margin-right: 15px; color: white;"><i class="fab fa-facebook"></i></a>
-                        <a href="#" style="color: white;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: white;"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
             </div>
