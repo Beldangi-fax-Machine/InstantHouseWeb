@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Instant House</title>
+    <meta name="description" content="Fresh ramen, boba tea & more at Instant House. View our full menu.">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/LOGO/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/LOGO/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/LOGO/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="../images/LOGO/favicon.ico">
+    <link rel="manifest" href="../images/LOGO/site.webmanifest">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;500;600&display=swap">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-dark: #1a1a2e;
+            --primary-light: #16213e;
+            --accent-gold: #F4C2C2;
+            --text-main: #333;
+            --text-light: #f4f4f4;
+            --bg-off-white: #f9f9f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background: linear-gradient(135deg, #FFF5F5 0%, #F4C2C2 30%, #E8B4B8 60%, #F5D0D0 100%);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .menu-header {
+            background: rgba(244, 194, 194, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid var(--primary-dark);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin: 0;
+        }
+
+        .logo-text .tagline {
+            font-size: 0.65rem;
+            color: var(--primary-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.7;
+        }
+
+        .back-home {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: opacity 0.3s;
+        }
+
+        .back-home:hover {
+            opacity: 0.7;
+        }
+
+        /* Main Content */
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px 50px;
+        }
+
+        .menu-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .menu-subtitle {
+            text-align: center;
+            color: var(--primary-dark);
+            opacity: 0.8;
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+
+        /* Menu Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .menu-category {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        .menu-category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .size-header {
+            font-size: 0.75rem;
+            color: #888;
+            text-align: right;
+            margin-bottom: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .menu-items {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 8px 0;
+            border-bottom: 1px dashed rgba(0,0,0,0.08);
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-name {
+            color: var(--text-main);
+            font-size: 0.9rem;
+            flex: 1;
+            line-height: 1.4;
+        }
+
+        .item-price {
+            color: var(--primary-dark);
+            font-weight: 600;
+            white-space: nowrap;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .menu-footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--primary-dark);
+        }
+
+        .menu-footer p {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .visit-btn {
+            display: inline-block;
+            background: var(--primary-dark);
+            color: white;
+            padding: 14px 30px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .visit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .social-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--primary-dark);
+            font-size: 1.8rem;
+        }
+
+        /* Tablet */
+        @media (max-width: 900px) {
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .menu-header {
+                padding: 12px 15px;
+            }
+
+            .logo-img {
+                height: 45px;
+            }
+
+            .logo-text h1 {
+                font-size: 1rem;
+            }
+
+            .logo-text .tagline {
+                font-size: 0.55rem;
+            }
+
+            .back-home {
+                font-size: 0.75rem;
+            }
+
+            .back-home span {
+                display: none;
+            }
+
+            .menu-container {
+                padding: 20px 15px 40px;
+            }
+
+            .menu-title {
+                font-size: 1.8rem;
+            }
+
+            .menu-subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 20px;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .menu-category {
+                padding: 18px;
+                border-radius: 12px;
+            }
+
+            .menu-category-title {
+                font-size: 1.05rem;
+                margin-bottom: 12px;
+            }
+
+            .menu-item {
+                padding: 6px 0;
+            }
+
+            .item-name {
+                font-size: 0.85rem;
+            }
+
+            .item-price {
+                font-size: 0.85rem;
+            }
+
+            .menu-footer p {
+                font-size: 0.85rem;
+            }
+
+            .visit-btn {
+                padding: 12px 25px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="menu-header">
+        <div class="header-content">
+            <a href="../index.html" class="logo-link">
+                <img src="../images/LOGO/1A3E63E8-7119-40B7-8B35-D3B9660D8D24.PNG" alt="Instant House Logo" class="logo-img">
+                <div class="logo-text">
+                    <h1>INSTANT HOUSE</h1>
+                    <p class="tagline">Est. 2025 &bull; Essex Jct</p>
+                </div>
+            </a>
+            <a href="../index.html" class="back-home">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="menu-container">
+        <h2 class="menu-title">Our Menu</h2>
+        <p class="menu-subtitle">Fresh ramen, boba tea & more</p>
+
+        <div class="menu-grid">
+            <!-- Combos -->
+            <div class="menu-category">
+                <h3 class="menu-category-title">Combos</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <span class="item-name">Ramen - 3 Toppings - Ice Cup - 1 Pouch Drink</span>
+                        <span class="item-price">$13.50</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Ramen - 3 Toppings - Medium Boba</span>
+                        <span class="item-price">$12.99</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Ramen - 3 Toppings - Rice Bowl</span>
+                        <span class="item-price">$10.00</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Ramen - 3 Toppings - Ice Cream</span>
+                        <span class="item-price">$9.50</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ramen Toppings -->
+            <div class="menu-category">
+                <h3 class="menu-category-title">Ramen Toppings</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <span class="item-name">Corn</span>
+                        <span class="item-price">$0.50</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Egg</span>
+                        <span class="item-price">$0.75</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Shredded Cheese</span>
+                        <span class="item-price">$0.50</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Kimchi</span>
+                        <span class="item-price">$0.75</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">American Cheese</span>
+                        <span class="item-price">$0.25</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">String Cheese</span>
+                        <span class="item-price">$0.50</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Spam</span>
+                        <span class="item-price">$1.20</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hot Drinks -->
+            <div class="menu-category">
+                <h3 class="menu-category-title">Hot Drinks (8 oz)</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <span class="item-name">Nepali Instant Hot Tea</span>
+                        <span class="item-price">$1.99</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Instant Hot Coffee</span>
+                        <span class="item-price">$1.99</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Instant Hot Chocolate</span>
+                        <span class="item-price">$1.99</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Whipped Cream</span>
+                        <span class="item-price">$0.50</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Milk Tea Series -->
+            <div class="menu-category">
+                <h3 class="menu-category-title">Milk Tea Series</h3>
+                <p class="size-header">M / L</p>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <span class="item-name">Black Milk Tea</span>
+                        <span class="item-price">$5.50 / $6.50</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Taro Milk Tea</span>
+                        <span class="item-price">$5.75 / $7.00</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Thai Milk Tea</span>
+                        <span class="item-price">$5.75 / $7.00</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Brown Sugar Milk Tea</span>
+                        <span class="item-price">$5.75 / $7.00</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Matcha Milk Tea</span>
+                        <span class="item-price">$5.75 / $6.50</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Coconut Milk Tea</span>
+                        <span class="item-price">$6.50 / $8.50</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Wintermelon Milk Tea</span>
+                        <span class="item-price">$5.75 / $7.00</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Strawberry Milk Tea</span>
+                        <span class="item-price">$6.00 / $8.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fruit & Non-Milk Tea Series -->
+            <div class="menu-category">
+                <h3 class="menu-category-title">Fruit & Non-Milk Tea</h3>
+                <p class="size-header">M / L</p>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <span class="item-name">Mango Green Tea</span>
+                        <span class="item-price">$5.00 / $6.50</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Peach Green Tea</span>
+                        <span class="item-price">$5.00 / $6.00</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Lychee Green Tea</span>
+                        <span class="item-price">$5.00 / $6.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Snacks & Sides -->
+            <div class="menu-category">
+                <h3 class="menu-category-title">Snacks & Sides</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <span class="item-name">Rice Bowl</span>
+                        <span class="item-price">$2.99</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boba Toppings -->
+            <div class="menu-category">
+                <h3 class="menu-category-title">Boba Toppings</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <span class="item-name">Strawberry Jelly</span>
+                        <span class="item-price">$0.75</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Coconut Jelly</span>
+                        <span class="item-price">$0.75</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Lychee Jelly</span>
+                        <span class="item-price">$0.75</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Mango Jelly</span>
+                        <span class="item-price">$0.75</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Tapioca</span>
+                        <span class="item-price">$0.75</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Mango Popping Boba</span>
+                        <span class="item-price">$1.00</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">Strawberry Popping Boba</span>
+                        <span class="item-price">$1.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cold Drinks -->
+            <div class="menu-category">
+                <h3 class="menu-category-title">Cold Drinks</h3>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <span class="item-name">Ice Cups 16 oz</span>
+                        <span class="item-price">$1.50</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="item-name">230 ML Pouch Drink</span>
+                        <span class="item-price">$4.99</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="menu-footer">
+        <p>4 Pearl St Suite 107, Essex Junction, VT 05452<br>(802) 305-9322</p>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=4+Pearl+St+Suite+107,+Essex+Junction,+VT+05452" target="_blank" class="visit-btn">Get Directions</a>
+        <br>
+        <a href="https://www.instagram.com/instanthousevt" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+    </footer>
+</body>
+</html>
