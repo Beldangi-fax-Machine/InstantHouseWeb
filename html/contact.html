@@ -13,7 +13,14 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="loading">
+    <!-- 30 Second Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <img src="../images/LOGO/1A3E63E8-7119-40B7-8B35-D3B9660D8D24.PNG" alt="Instant House Logo" class="loader-logo">
+        <p class="loader-message">Hold on as we direct you to the website...</p>
+        <div class="loader-spinner"></div>
+    </div>
+
     <header>
         <nav>
             <div class="logo">
@@ -128,5 +135,18 @@
             </div>
         </div>
     </footer>
+
+    <!-- 30 Second Loader Script -->
+    <script>
+        (function() {
+            const loader = document.getElementById('pageLoader');
+            const body = document.body;
+
+            setTimeout(function() {
+                loader.classList.add('hidden');
+                body.classList.remove('loading');
+            }, 30000); // 30 seconds
+        })();
+    </script>
 </body>
 </html>
